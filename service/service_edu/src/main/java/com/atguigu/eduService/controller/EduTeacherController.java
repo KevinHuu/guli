@@ -26,6 +26,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduService/teacher")
+@CrossOrigin
 public class EduTeacherController {
     @Autowired
     private EduTeacherService teacherService;
@@ -33,11 +34,6 @@ public class EduTeacherController {
     @GetMapping("findAll")
     public R findAllTeacher(){
         List<EduTeacher> list = teacherService.list(null);
-        try {
-            int i=10/0;
-        }catch (Exception e){
-            throw new GuliException(525,"执行了GuliException异常处理");
-        }
         return R.ok().data("items",list);
     }
 
@@ -84,6 +80,7 @@ public class EduTeacherController {
         if(!StringUtils.isEmpty(end)){
             queryWrapper.le("gmt_create",end);
         }
+        queryWrapper.orderByDesc("gmt_create");
         teacherService.page(page,queryWrapper);
         long total = page.getTotal();
         List<EduTeacher> records = page.getRecords();
