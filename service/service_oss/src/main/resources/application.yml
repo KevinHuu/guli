@@ -1,0 +1,15 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: service-oss
+  profiles:
+    active: dev
+
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-beijing.aliyuncs.com
+      accessKeyId: LTAI4GCtTzu3DaBPSvPPiQhE
+      accessKeySecret: RvO4Vvb5XozT404hndQAWU0QcZp9Hq
+      bucketName: education-0525
