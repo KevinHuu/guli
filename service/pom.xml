@@ -86,6 +86,11 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+        </dependency>
+
         <!--xls-->
         <dependency>
             <groupId>org.apache.poi</groupId>
